@@ -52,6 +52,12 @@ class ViewController: UIViewController {
 
         setUpUI()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setUpUI()
+    }
 
     private func setUpUI() {
         view.backgroundColor = .white
@@ -66,9 +72,11 @@ class ViewController: UIViewController {
         stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -110).isActive = true
         stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 287).isActive = true
   
-        switcher.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 80).isActive = true
-        switcher.trailingAnchor.constraint(equalTo: stack.trailingAnchor, constant: -110).isActive = true
-        switcher.leadingAnchor.constraint(equalTo: stack.leadingAnchor, constant: 110).isActive = true
+        switcher.center.y = view.center.y + 40
+        switcher.center.x = view.center.x
+//        switcher.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 80).isActive = true
+//        switcher.trailingAnchor.constraint(equalTo: stack.trailingAnchor, constant: -110).isActive = true
+//        switcher.leadingAnchor.constraint(equalTo: stack.leadingAnchor, constant: 110).isActive = true
 
     }
 }
